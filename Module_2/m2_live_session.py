@@ -3,7 +3,7 @@ It's a "board" of actual lecture! Code here has no logic on it's own
 All topics are not commented now! Please comment out all of them first to use separately
 """
 
-# === Assigment ===
+# === Assignment ===
 a = 123
 print(a)
 
@@ -48,8 +48,8 @@ print('a < b') if a < b else print('asfg')
 a = 123
 b = 321
 if a < b:
-    if a+b >400:
-        print(a+b)
+    if a + b > 400:
+        print(a + b)
     else:
         print('asdf')
 else:
@@ -69,19 +69,17 @@ for name in names:
 for i in range(3):
     print(i)
 
-
 i = 0
 while True:
     print(i)
-    i+=1
+    i += 1
     if i > 100:
         break
-
 
 i = 0
 while i < 5:
     print(i)
-    i+=1
+    i += 1
 else:
     print('this is it')
 
@@ -97,7 +95,6 @@ if 'Igor' in names:
 if 'Mike' not in names:
     print('Mike is not here')
 
-
 # === Identity Operators ===
 
 a = 1
@@ -111,11 +108,10 @@ if type(a) is int:
 wish_food = 'salad'
 money = 0
 
-if wish_food == 'salad' or wish_food == 'steak' and money >=15:
+if wish_food == 'salad' or wish_food == 'steak' and money >= 15:
     print('Here is your food')
 else:
     print('sorry, no food for you today')
-
 
 # === Strings ===
 
@@ -127,30 +123,27 @@ print(a[::-1])
 for chr in a:
     print(chr)
 
-
 name = 'Igor'
 fname = 'Bob'
 # print('hi %s' %name)
 
-greetings = 'Hi {my_n},  this is {f_n}'.format(f_n = fname, my_n = name)
+greetings = 'Hi {my_n},  this is {f_n}'.format(f_n=fname, my_n=name)
 print(greetings)
 
 print(f'Hi {name}, this is {fname}')
 
 # === Numbers ===
 
-print(0.1+0.1+0.1-0.3)
+print(0.1 + 0.1 + 0.1 - 0.3)
 
-print(1.1+2.2)
-
+print(1.1 + 2.2)
 
 from decimal import *
 
 getcontext().prec = 1
 print(Decimal(1.1) + Decimal(2.2))
-a = 1.1+2.2
+a = 1.1 + 2.2
 print(Decimal(a))
 
 # import random
 # print(random.randrange(0, 100))
-
