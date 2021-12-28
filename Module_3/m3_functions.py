@@ -24,13 +24,17 @@ for name in names:
     print(greeting_with_name(name))
 
 
-def say_hi(*name):  # You can use arguments instead of loops
+# One of the options if we need process multiple conditions inside the function
+def my_shiny_func(msg='Hi', *names):
+    response = []
     for name in names:
-        print(f"Hey {name}")
+        a = f"{msg} it`s {name}"
+        response.append(a)
+    return response
 
 
 print('Example 4 result:')
-say_hi("Bob", "Mike", "Nick")
+print(my_shiny_func('Hello', 'Mike', 'Bob', 'Masha'))
 
 
 def func_args_exmp(name='Bob'):
