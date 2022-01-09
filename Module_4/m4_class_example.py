@@ -1,5 +1,6 @@
 from datetime import date
 
+
 class Car:
     def __init__(self, year, model, vendor, color='black'):
         self.year = year
@@ -15,7 +16,7 @@ class Car:
             return 'Only calm ride for you'
 
     def getinfosold(self):
-        return (f"Your {self.color} {self.model} sold by '{self.vendor}' in {self.year}")
+        return f"Your {self.color} {self.model} sold by '{self.vendor}' in {self.year}"
 
     @classmethod
     def get_sold_ago(cls, age, model, vendor, color):
@@ -35,7 +36,6 @@ print(Car.car_check('sport'))
 
 # Output for classmethod
 # we don't know the year when the car was produced, lets calculate based on age
-
 car_3 = Car.get_sold_ago(10, 'Mazda 6', 'Mazda Cars', 'red')
 
 # Also, vendor and color will be changed
