@@ -3,147 +3,151 @@ It's a "board" of actual lecture! Code here has no logic on it's own
 All topics are not commented now! Please comment out all of them first to use separately
 """
 
-# === Assignment ===
-a = 123
+# Lecture 28.03.2022
+
+a = b = c = 123
+print(c, a)
+
+a, b, c = 'A', 'B', 'C'
+
+# Garbege collection
+import gc
+a, b, *names, c, d = 'A', 'b', 'Igor', 'Mike', 'Alena'
+print(type(a))
+print(type(names))
 print(a)
+print(names)
+print(c)
+print(d)
 
-a = b = c = 0
-print(b)
+del d
+gc.collect()
+print(d)
 
-a, b, c = 'letter A', 'letter B', 'letter C'
-print(b)
 
-now_time, ip, *payload = '18:44', '8.8.8.8', 'asd', 'gfdf', 'gfgkjhf'
-print(payload)
-print(now_time)
+x = 1
+y = 1.1
 
-# === Data types and type conversion==
+print(type(x))
+print(type(y))
 
-print(type(ip))
-print(type(payload))
-a = 1
-a = 1234
-b = 1.1
-print(type(a))
-print(type(b))
-a = a + b
-print(type(a))
-print(int('10101', 2))
-print(bin(21))
-print(ord('ᑱ'))
+x+=y
 
-# === Comparison  ===
-a = 123
-b = 321
+print(x)
+print(type(x))
 
-if a > b:
-    print('a > b')
-elif a == b:
-    print('a = b')
-else:
-    print('b > a')
+print(hex(22))
+print(bin(22))
+print(oct(22))
 
-print('a < b') if a < b else print('asfg')
+print(int('10110', 2))
 
-a = 123
-b = 321
+print(chr(4654))
+print(ord('ሮ'))
+
+
+a = 210
+b = 200
+
 if a < b:
-    if a + b > 400:
-        print(a + b)
-    else:
-        print('asdf')
+    print('a < b')
+elif a == b:
+    print('a == b')
 else:
-    print('fdsf')
+    print('b < a ')
 
-a = 123
-b = 321
+if a <= b:
+    print('a <= b')
+    if a == b:
+        print('a == b')
+    else:
+        print('kjfghkjdfhf')
+else:
+    print('bla bla')
 
 if a > b:
     pass
 
-# === Loops ===
-names = ['Mike', 'Anton', 'Masha']
-for name in names:
-    print(f'Hi {name}')
 
-for i in range(3):
+numbers = [1, 123, 435, 5465]
+for i in numbers:
     print(i)
 
-i = 0
+for i in range(1, 10, 2):
+    print(i)
+
+x = 2
 while True:
-    print(i)
-    i += 1
-    if i > 100:
+    print(x)
+    x+=2
+    if x > 200:
         break
 
-i = 0
-while i < 5:
-    print(i)
-    i += 1
+number = 0
+while number < 5:
+    print(number)
+    number+=1
 else:
-    print('this is it')
+    print(f"number reached {number}")
 
 for x in range(10):
     if x % 2 == 0:
         continue
     print(x)
 
-# === Membership Operators ===
-names = ['Alena', 'Bob', 'Igor']
-if 'Igor' in names:
-    print('Igor is here')
-if 'Mike' not in names:
-    print('Mike is not here')
+print(10 & 4)
+print(10 | 4)
+print(10 ^ 9)
 
-# === Identity Operators ===
+print(int('0011', 2))
 
-a = 1
+st_in_cls = ['Mike', 'Bob', 'Ivan']
+if 'Ivan' in st_in_cls:
+    print('Ivan is here')
+if 'Masha' not in st_in_cls:
+    print('Masha is not here')
+
+a = 1.0
 print(type(a))
-if type(a) is int:
-    print('it is string')
+if type(a) is float:
+    print('a is float')
+else:
+    print('a is not float')
 
-# Priority of operators example
-# !! You need to add () to make it work as expected
-
-wish_food = 'salad'
+wish_food = 'fish'
 money = 0
-
-if wish_food == 'salad' or wish_food == 'steak' and money >= 15:
+            #             True
+            #                                 False
+            # True                    False           False
+if (wish_food == 'fish' or wish_food == 'salad') and money >= 15:
     print('Here is your food')
 else:
-    print('sorry, no food for you today')
+    print('no food for you today')
 
-# === Strings ===
-
-a = 'I am Groot'
-print(a[0])
-print(a[5:6])
-print(a[::-1])
-
-for chr in a:
+expression = "I am Groot"
+print(expression[::-1])
+for chr in expression:
     print(chr)
 
+
 name = 'Igor'
-fname = 'Bob'
-# print('hi %s' %name)
+sr_na = 'GJHlkgdj'
+print('Hi, %(name)s %(sr_na)s' % {"name": name, "sr_na": sr_na})
 
-greetings = 'Hi {my_n},  this is {f_n}'.format(f_n=fname, my_n=name)
-print(greetings)
+print('Hi, {}'.format(name))
+print('Hi, {} {} {}'.format(name, sr_na, 'bla bla'))
 
-print(f'Hi {name}, this is {fname}')
+print(f'Hi {sr_na} {name}')
 
-# === Numbers ===
+print(name + ' ' + sr_na)
 
-print(0.1 + 0.1 + 0.1 - 0.3)
-
-print(1.1 + 2.2)
+https://docs.python.org/3/library/decimal.html
 
 from decimal import *
-
-getcontext().prec = 1
+getcontext().prec = 2
+print(1 / 7)
+print(Decimal(1) / Decimal(7))
 print(Decimal(1.1) + Decimal(2.2))
-a = 1.1 + 2.2
-print(Decimal(a))
 
-# import random
-# print(random.randrange(0, 100))
+import random
+print(random.randrange(0, 1000))
